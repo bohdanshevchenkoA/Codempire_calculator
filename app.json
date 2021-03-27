@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Тестовое задание на позицию Junior Strong JS Developer.",
+    "githubUrl": "https://github.com/bohdanshevchenkoA/Codempire_calculator"
   }
 }

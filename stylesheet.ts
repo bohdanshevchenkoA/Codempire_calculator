@@ -1,9 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Appearance, Dimensions } from 'react-native';
+
+const colorScheme = Appearance.getColorScheme();
+const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'
+        marginTop: 40
     },
     resultPanel: {
         flex: 1,
@@ -13,6 +16,7 @@ export const styles = StyleSheet.create({
     },
     resultPanelText: {
         fontSize: 60,
+        color: colorScheme === 'light' ? 'black' : 'white',
         paddingHorizontal: 30
     },
     buttonRow: {
@@ -23,7 +27,31 @@ export const styles = StyleSheet.create({
         paddingVertical: '3%',
         paddingBottom: '20%'
     },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 50,
+        height: windowWidth / 5,
+        width: windowWidth / 5
+    },
+    buttonZero: {
+        width: (windowWidth / 5) * 2.22,
+        paddingRight: 100
+    },
     buttonLabel: {
-        fontSize: 30
+        fontSize: 30,
+        color: 'white'
     }
 });
+
+export const colors = StyleSheet.create({
+    dark: {
+        backgroundColor: '#333333'
+    },
+    orange: {
+        backgroundColor: '#ff9a0a'
+    },
+    light: {
+        backgroundColor: '#a5a5a5'
+    }
+})

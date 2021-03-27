@@ -1,7 +1,9 @@
+import { colors } from './stylesheet';
+
 export const button = [
-    [{ label: 'AC', color: '#a5a5a5' }, { label: 'C', color: '#a5a5a5' }, { label: '+/-', color: '#a5a5a5' }, { label: '%', color: '#a5a5a5' }, { label: '/', color: '#ff9a0a' }],
-    [{ label: 'mc', color: '#333333' }, { label: 'mr', color: '#333333' }, { label: 'm-', color: '#333333' }, { label: 'm+', color: '#ff9a0a' }],
-    [{ label: '7', color: '#333333' }, { label: '8', color: '#333333' }, { label: '9', color: '#333333' }, { label: '*', color: '#ff9a0a' }],
-    [{ label: '4', color: '#333333' }, { label: '5', color: '#333333' }, { label: '6', color: '#333333' }, { label: '-', color: '#ff9a0a' }],
-    [{ label: '1', color: '#333333' }, { label: '2', color: '#333333' }, { label: '3', color: '#333333' }, { label: '+', color: '#ff9a0a' }],
-    [{ label: '0', color: '#333333' }, { label: ',', color: '#333333' }, { label: '=', color: '#ff9a0a' }]];
+    [{ label: 'AC', color: colors.light }, { label: 'C', color: colors.light }, { label: '+/-', color: colors.light }, { label: '%', color: colors.light }, { label: '/', color: colors.orange }],
+    [{ label: 'mc', color: colors.dark }, { label: 'mr', color: colors.dark }, { label: 'm-', color: colors.dark }, { label: 'm+', color: colors.orange }],
+    [{ label: '7', color: colors.dark }, { label: '8', color: colors.dark }, { label: '9', color: colors.dark }, { label: '*', color: colors.orange }],
+    [{ label: '4', color: colors.dark }, { label: '5', color: colors.dark }, { label: '6', color: colors.dark }, { label: '-', color: colors.orange }],
+    [{ label: '1', color: colors.dark }, { label: '2', color: colors.dark }, { label: '3', color: colors.dark }, { label: '+', color: colors.orange }],
+    [{ label: '0', color: colors.dark }, { label: ',', color: colors.dark }, { label: '=', color: colors.orange }]];

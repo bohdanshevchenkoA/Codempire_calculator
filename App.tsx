@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { TouchableHighlight, Text, View, Dimensions } from 'react-native';
+import { TouchableHighlight, Text, View, Dimensions, SafeAreaView } from 'react-native';
 import { button } from './constants';
-import { styles } from './stylesheet'
+import { styles, colors } from './stylesheet'
 import { Button } from './interfaces/buttonInterface';
 
 const windowWidth = Dimensions.get('window').width;
@@ -91,7 +91,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
 
       <View style={styles.resultPanel}>
         <Text
@@ -114,20 +114,15 @@ export default function App() {
               <TouchableHighlight
                 underlayColor={'white'}
                 key={index}
-                style={{
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: 50,
-                  backgroundColor: operator === button.label ? 'white' : button.color,
-                  height: windowWidth / 5,
-                  width: button.label === '0' ? (windowWidth / 5) * 2.22 : windowWidth / 5,
-                  paddingRight: button.label === '0' ? 100 : 0,
+                style={[button.label !== '0' ? [styles.button, button.color] : [styles.button, styles.buttonZero, button.color],
+                {
                   display: button.label === 'C'
                     ? displayC
                     : button.label === 'AC'
                       ? displayAC
                       : 'flex'
-                }}
+                }
+                ]}
                 onPress={() => handleButtonPress(button.label)}
               >
                 <Text style={styles.buttonLabel}>
@@ -142,6 +137,6 @@ export default function App() {
       </View>
 
       <StatusBar style="auto" />
-    </View >
+    </SafeAreaView >
   );
 }

@@ -1,4 +1,4 @@
 export interface Button {
-    color: string;
+    color: object;
     label: string;
 }
