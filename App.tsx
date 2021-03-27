@@ -117,15 +117,21 @@ export default function App() {
               <TouchableHighlight
                 underlayColor={'white'}
                 key={index}
-                style={[button.label !== '0' ? [styles.button, button.color] : [styles.button, styles.buttonZero, button.color],
-                {
-                  display: button.label === 'C'
-                    ? displayC
-                    : button.label === 'AC'
-                      ? displayAC
-                      : 'flex'
-                }
-                ]}
+                style={
+                  [
+                    button.label !== '0'
+                      ? [styles.button, button.color]
+                      : [styles.button, styles.buttonZero, button.color],
+                    operator === button.label ? { backgroundColor: '#a5a5a5' } : {},
+                    {
+
+                      display: button.label === 'C'
+                        ? displayC
+                        : button.label === 'AC'
+                          ? displayAC
+                          : 'flex'
+                    }
+                  ]}
                 onPress={() => handleButtonPress(button.label)}
               >
                 <Text style={styles.buttonLabel}>
