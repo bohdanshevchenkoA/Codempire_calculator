@@ -1,11 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { TouchableHighlight, Text, View, Dimensions, SafeAreaView } from 'react-native';
+import { TouchableHighlight, Text, View, SafeAreaView } from 'react-native';
 import { button } from './constants';
-import { styles, colors } from './stylesheet'
+import { styles } from './stylesheet'
 import { Button } from './interfaces/buttonInterface';
-
-const windowWidth = Dimensions.get('window').width;
 
 type displayProp = 'flex' | 'none' | undefined;
 
@@ -71,13 +69,18 @@ export default function App() {
         break;
       }
       default: {
+        let maxNumLength = displayedValue.includes('.') ? 15 : 13;
+
         if (operator.length) {
           setExpression(expression + displayedValue + operator);
           setDisplayedValue(buttonLabel);
           setOperator('');
           break;
         }
-        setDisplayedValue(Number(displayedValue + buttonLabel).toString());
+
+        displayedValue.length <= maxNumLength
+          ? setDisplayedValue(Number(displayedValue + buttonLabel).toString())
+          : '';
       }
     }
   }
